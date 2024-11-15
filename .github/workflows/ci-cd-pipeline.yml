@@ -1,0 +1,61 @@
+name: Angular CI/CD Pipeline
+
+on:
+  push:
+    branches:
+      - main  # Trigger on push to the main branch
+  pull_request:
+    branches:
+      - main  # Trigger on pull request targeting the main branch
+
+jobs:
+  build:
+    runs-on: ubuntu-latest  # Use the latest Ubuntu runner
+
+    steps:
+      # Checkout the repository
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      # Set up Node.js
+      - name: Set up Node.js 20
+        uses: actions/setup-node@v3
+        with:
+          node-version: '20'
+
+      # Install dependencies
+      - name: Install dependencies
+        run: npm install
+
+      # Run tests
+      - name: Run tests
+        run: npm test -- --browsers=ChromeHeadless --watch=false --code-coverage
+
+  deploy:
+    runs-on: ubuntu-latest  # Use the latest Ubuntu runner
+    needs: build  # Make sure the build job succeeds first
+
+    steps:
+      # Checkout the repository
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      # Set up Node.js
+      - name: Set up Node.js 20
+        uses: actions/setup-node@v3
+        with:
+          node-version: '20'
+
+      # Install dependencies
+      - name: Install dependencies
+        run: npm install
+
+      # Build the Angular project
+      - name: Build Angular project
+        run: npm run build -- --configuration=production --base-href='https://timaar.github.io/CyclistenElewijt/'
+
+      # Deploy to GitHub Pages
+      - name: Deploy to GitHub Pages
+        run: npx angular-cli-ghpages --dir=dist/cyclisten-elewijt/browser
+        env:
+          GH_TOKEN: ${{ secrets.GH_TOKEN }}  # Use the secret here for authentication
