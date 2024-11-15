@@ -62,6 +62,6 @@ jobs:
 
       # Deploy to GitHub Pages
       - name: Deploy to GitHub Pages
-        run: npx angular-cli-ghpages --dir=dist/cyclisten-elewijt/browser
+        run: npx angular-cli-ghpages --dir=dist/cyclisten-elewijt/browser --no-silent
         env:
           GH_TOKEN: ${{ secrets.GH_TOKEN }}  # Use the secret here for authentication
