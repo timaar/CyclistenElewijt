@@ -7,6 +7,12 @@ on:
   pull_request:
     branches:
       - main  # Trigger on pull request targeting the main branch
+  workflow_dispatch:  # Allow manual trigger from GitHub UI
+    inputs:
+      message:
+        description: 'Deployment message'
+        required: false
+        default: 'Manual trigger for deployment'
 
 jobs:
   build:
