@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component, EventEmitter, Output} from '@angular/core';
 
 @Component({
   selector: 'app-navbar',
@@ -8,5 +8,9 @@ import { Component } from '@angular/core';
   styleUrl: './navbar.component.scss'
 })
 export class NavbarComponent {
+  @Output() componentSelected = new EventEmitter<string>();
 
+  selectComponent(component: string) {
+    this.componentSelected.emit(component);
+  }
 }
