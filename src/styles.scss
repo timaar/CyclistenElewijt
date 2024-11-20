@@ -24,7 +24,3 @@ $gray-900: map-get(map-get($_palettes, neutral), 20);
 
 // Import Bootstrap SCSS file after defining custom variables
 @import 'bootstrap/scss/bootstrap';
-
-body {
-  //background-color: #ff6352; // Optional body color for testing
-}
