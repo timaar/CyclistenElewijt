@@ -1,7 +1,11 @@
 <app-navbar></app-navbar>
 
-<div>
-  <router-outlet></router-outlet>
-</div>
+<!-- Main Content Area with Flexbox to fill the space -->
+<div class="d-flex flex-column min-vh-100">
+  <div class="flex-grow-1">
+    <router-outlet></router-outlet> <!-- Your routed content will be rendered here -->
+  </div>
 
-<app-footer></app-footer>
+  <!-- Footer Component -->
+  <app-footer></app-footer>
+</div>
