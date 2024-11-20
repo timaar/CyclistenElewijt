@@ -1,26 +1,15 @@
-// Import the color-palette file (assuming it defines $_palettes)
-@import "color-palette";
+$white: #b8c392;
 
-// Map palette colors to Bootstrap variables
-$primary: map-get(map-get($_palettes, primary), 60);        // Primary color - core shade
-$secondary: map-get(map-get($_palettes, secondary), 70);    // Secondary color - slightly lighter for contrast
-$success: map-get(map-get($_palettes, tertiary), 60);       // Success color mapped to a friendly shade from tertiary
-$info: map-get(map-get($_palettes, neutral), 70);           // Info color using neutral for softer accents
-$warning: map-get(map-get($_palettes, tertiary), 80);       // Warning color with a bright accent
-$danger: map-get(map-get($_palettes, error), 60);           // Danger color using error palette
-$light: map-get(map-get($_palettes, neutral), 95);          // Light background color
-$dark: map-get(map-get($_palettes, neutral), 20);           // Dark color for contrast text and elements
-
-// Optionally, define gray shades used in Bootstrap by default
-$gray-100: map-get(map-get($_palettes, neutral), 95);
-$gray-200: map-get(map-get($_palettes, neutral), 90);
-$gray-300: map-get(map-get($_palettes, neutral), 80);
-$gray-400: map-get(map-get($_palettes, neutral), 70);
-$gray-500: map-get(map-get($_palettes, neutral), 60);
-$gray-600: map-get(map-get($_palettes, neutral), 50);
-$gray-700: map-get(map-get($_palettes, neutral), 40);
-$gray-800: map-get(map-get($_palettes, neutral), 30);
-$gray-900: map-get(map-get($_palettes, neutral), 20);
+$theme-colors: (
+  "light":      #ff6352,
+  "dark":       #0a090a,
+  "primary":    #053025,
+  "secondary":  #285f88,
+  "info":       #eceae5,
+  "success":    #14a83b,
+  "warning":    #f2c614,
+  "danger":     #f40840,
+);
 
 // Import Bootstrap SCSS file after defining custom variables
 @import 'bootstrap/scss/bootstrap';
