@@ -4,8 +4,7 @@
     <div class="col-md-6 d-flex mb-4">
       <div class="card shadow flex-fill">
         <div class="card-body">
-          <h2 class="card-title">Gpx - Koersfiets</h2>
-          <div>TODO list the latest rides</div>
+          <app-rit-list-component title="Koersfiets ritten"></app-rit-list-component>
         </div>
       </div>
     </div>
@@ -14,8 +13,7 @@
     <div class="col-md-6 d-flex mb-4">
       <div class="card shadow flex-fill">
         <div class="card-body">
-          <h2 class="card-title">Gpx - Mountainbike</h2>
-          <div>TODO list the latest rides</div>
+          <app-rit-list-component [useMTB]="true" title="Mountainbike ritten"></app-rit-list-component>
         </div>
       </div>
     </div>

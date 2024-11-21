@@ -1,0 +1,22 @@
+<div class="container mt-4">
+  <h2>{{ title }}</h2>
+
+  <ul class="list-group mb-3">
+    <li *ngFor="let rit of paginatedRitten" class="list-group-item">
+      <h5 class="mb-1">{{ rit.name }}</h5>
+      <p class="mb-1 text-muted">
+        {{ rit.afspraakDatum | date: 'EEEE d MMMM y \'om\' HH:mm' }}
+      </p>
+      <a [href]="rit.gpxLink" download class="btn btn-warning btn-sm">Download GPX</a>
+    </li>
+  </ul>
+
+  <ngb-pagination
+    [(page)]="page"
+    [pageSize]="pageSize"
+    [collectionSize]="ritten.length"
+    (pageChange)="updatePagination()"
+    aria-label="Default pagination"
+    class="justify-content-center">
+  </ngb-pagination>
+</div>
