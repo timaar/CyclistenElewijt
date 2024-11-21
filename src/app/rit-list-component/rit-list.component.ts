@@ -12,8 +12,8 @@ import { CommonModule, DatePipe } from '@angular/common';
     DatePipe,
     CommonModule
   ],
-  templateUrl: './rit-list-component.component.html',
-  styleUrl: './rit-list-component.component.scss'
+  templateUrl: './rit-list.component.html',
+  styleUrl: './rit-list.component.scss'
 })
 export class RitListComponent implements OnInit {
   @Input() useMTB: boolean = false;  // Default to false (Koersfiets data)

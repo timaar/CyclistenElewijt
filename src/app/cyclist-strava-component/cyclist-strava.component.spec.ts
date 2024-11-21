@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { CyclistStravaComponentComponent } from './cyclist-strava-component.component';
+import { CyclistStravaComponent } from './cyclist-strava.component';
 
 describe('CyclistStravaComponentComponent', () => {
-  let component: CyclistStravaComponentComponent;
-  let fixture: ComponentFixture<CyclistStravaComponentComponent>;
+  let component: CyclistStravaComponent;
+  let fixture: ComponentFixture<CyclistStravaComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [CyclistStravaComponentComponent]
+      imports: [CyclistStravaComponent]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(CyclistStravaComponentComponent);
+    fixture = TestBed.createComponent(CyclistStravaComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

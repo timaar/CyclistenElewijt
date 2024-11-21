@@ -11,10 +11,10 @@ import {CommonModule  } from '@angular/common';
   imports: [
     SafeUrlPipe, NgbAccordionModule, CommonModule
   ],
-  templateUrl: './cyclist-strava-component.component.html',
-  styleUrl: './cyclist-strava-component.component.scss'
+  templateUrl: './cyclist-strava.component.html',
+  styleUrl: './cyclist-strava.component.scss'
 })
-export class CyclistStravaComponentComponent implements OnInit {
+export class CyclistStravaComponent implements OnInit {
   cyclists: StravaCyclistModel[] = [];
 
   constructor(private cyclistStravaService: CyclistStravaService) {}
