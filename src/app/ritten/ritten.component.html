@@ -4,7 +4,7 @@
     <div class="col-md-6 d-flex mb-4">
       <div class="card shadow flex-fill">
         <div class="card-body">
-          <app-rit-list-component title="Koersfiets ritten"></app-rit-list-component>
+          <app-rit-list-component title="Koersfiets Ritten"></app-rit-list-component>
         </div>
       </div>
     </div>
@@ -13,25 +13,26 @@
     <div class="col-md-6 d-flex mb-4">
       <div class="card shadow flex-fill">
         <div class="card-body">
-          <app-rit-list-component [useMTB]="true" title="Mountainbike ritten"></app-rit-list-component>
+          <app-rit-list-component [useMTB]="true" title="Mountainbike Ritten"></app-rit-list-component>
         </div>
       </div>
     </div>
   </div>
 
   <!-- Stravas cyclisten Full-Width Section -->
-  <div class="row mb-4">
-    <div class="col-12">
-      <div class="card shadow flex-fill">
-        <div class="card-body">
-          <h2 class="card-title">Stravas cyclisten</h2>
-          <p> TODO make an accordeon and </p>
-          <div class="embed-responsive embed-responsive-16by9">
-            <iframe class="embed-responsive-item" height="454" width="100%" frameborder="0" allowtransparency="true" scrolling="no"
-                    src="https://www.strava.com/athletes/29288572/latest-rides/5b036f20a98d5a2cb7ca567dbd0f62a81e6cb700"></iframe>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
+<!--  <div class="row mb-4">-->
+<!--    <div class="col-12">-->
+<!--      <div class="card shadow flex-fill">-->
+<!--        <div class="card-body">-->
+<!--          <h2 class="card-title">Stravas cyclisten</h2>-->
+<!--          <p> TODO make an accordeon and </p>-->
+<!--          <div class="embed-responsive embed-responsive-16by9">-->
+<!--            <iframe class="embed-responsive-item" height="454" width="100%" frameborder="0" allowtransparency="true" scrolling="no"-->
+<!--                    src="https://www.strava.com/athletes/29288572/latest-rides/5b036f20a98d5a2cb7ca567dbd0f62a81e6cb700"></iframe>-->
+<!--          </div>-->
+<!--        </div>-->
+<!--      </div>-->
+<!--    </div>-->
+<!--  </div>-->
+  <app-cyclist-strava-component></app-cyclist-strava-component>
 </div>

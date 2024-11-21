@@ -1,0 +1,31 @@
+<div class="row mb-4">
+  <div class="col-12">
+    <div class="card shadow flex-fill">
+      <div class="card-body">
+        <h2 class="card-title">Stravas Cyclisten</h2>
+        <div ngbAccordion>
+          <div ngbAccordionItem *ngFor="let cyclist of cyclists" [collapsed]="true">
+            <h2 ngbAccordionHeader>
+              <button ngbAccordionButton>{{ cyclist.name }}</button>
+            </h2>
+            <div ngbAccordionCollapse>
+              <div ngbAccordionBody>
+                <div class="embed-responsive embed-responsive-16by9">
+                  <iframe
+                    class="embed-responsive-item"
+                    height="454"
+                    width="100%"
+                    frameborder="0"
+                    allowtransparency="true"
+                    scrolling="no"
+                    [src]="cyclist.stravaLink | safeUrl"
+                  ></iframe>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
