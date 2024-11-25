@@ -1,7 +1,7 @@
 import { Routes } from '@angular/router';
 import { RittenComponent } from './ritten/ritten.component';
 import { HomeComponent } from './home/home.component';
-import { NotFoundComponentComponent } from './not-found-component/not-found-component.component';
+import { NotFoundComponent } from './not-found-component/not-found.component';
 
 export const routes: Routes = [
   {
@@ -14,6 +14,6 @@ export const routes: Routes = [
   },
   {
     path: '**',
-    component: NotFoundComponentComponent
+    component: NotFoundComponent
   }
 ];
