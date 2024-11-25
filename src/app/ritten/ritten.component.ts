@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import {RitListComponent} from '../rit-list-component/rit-list.component';
-import {CyclistStravaComponent} from '../cyclist-strava-component/cyclist-strava.component';
+import { RitListComponent } from '../rit-list-component/rit-list.component';
+import { CyclistStravaComponent } from '../cyclist-strava-component/cyclist-strava.component';
 
 @Component({
   selector: 'app-ritten',

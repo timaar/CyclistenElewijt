@@ -1,9 +1,9 @@
-import {Component, OnInit} from '@angular/core';
-import {StravaCyclistModel} from '../models/StravaCyclist.model';
-import {CyclistStravaService} from '../services/CyclistStravaService';
-import {SafeUrlPipe} from '../pipes/safe-url.pipe';
-import {NgbAccordionModule} from '@ng-bootstrap/ng-bootstrap';
-import {CommonModule  } from '@angular/common';
+import { Component, OnInit } from '@angular/core';
+import { StravaCyclistModel } from '../models/StravaCyclist.model';
+import { CyclistStravaService } from '../services/CyclistStravaService';
+import { SafeUrlPipe } from '../pipes/safe-url.pipe';
+import { NgbAccordionModule } from '@ng-bootstrap/ng-bootstrap';
+import { CommonModule  } from '@angular/common';
 
 @Component({
   selector: 'app-cyclist-strava-component',

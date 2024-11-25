@@ -1,8 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import {RitModel} from '../models/rit.model';
-import {StravaCyclistModel} from '../models/StravaCyclist.model';
+import { StravaCyclistModel } from '../models/StravaCyclist.model';
 
 @Injectable({
   providedIn: 'root'

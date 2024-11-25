@@ -16,8 +16,8 @@ import { CommonModule, DatePipe } from '@angular/common';
   styleUrl: './rit-list.component.scss'
 })
 export class RitListComponent implements OnInit {
-  @Input() useMTB: boolean = false;  // Default to false (Koersfiets data)
-  @Input() title: string = '';  // Input for dynamic title
+  @Input() useMTB = false;  // Default to false (Koersfiets data)
+  @Input() title = '';      // Input for dynamic title
   ritten: RitModel[] = [];
   paginatedRitten: RitModel[] = [];
   page = 1; // Current page
