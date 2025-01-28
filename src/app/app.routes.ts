@@ -8,10 +8,10 @@ export const routes: Routes = [
     path: '',
     component: HomeComponent
   },
-  {
-    path: 'ritten',
-    component: RittenComponent
-  },
+  // {
+  //   path: 'ritten',
+  //   component: RittenComponent
+  // },
   {
     path: '**',
     component: NotFoundComponent
