@@ -7,7 +7,7 @@
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test --browsers=ChromeHeadless --watch=false --code-coverage",
-    "deploy": "ng build --configuration=production --base-href='https://timaar.github.io/CyclistenElewijt/' && npx angular-cli-ghpages --dir=dist/cyclisten-elewijt/browser",
+    "deploy": "ng build --configuration=production --base-href='https://cyclistenelewijt.be/' && npx angular-cli-ghpages --dir=dist/cyclisten-elewijt/browser",
     "lint": "ng lint"
   },
   "private": true,
