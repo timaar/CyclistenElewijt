@@ -7,10 +7,11 @@
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test --browsers=ChromeHeadless --watch=false --code-coverage",
-    "deploy": "ng build --configuration=production --base-href='/' && npx angular-cli-ghpages --dir=dist/cyclisten-elewijt/browser",
+    "deploy": "ng build --configuration=production --base-href=/CyclistenElewijt/ && npx angular-cli-ghpages --dir=dist/cyclisten-elewijt/browser",
     "lint": "ng lint"
   },
   "private": true,
+  "homepage": "https://timaar.github.io/CyclistenElewijt",
   "dependencies": {
     "@angular/animations": "^18.2.0",
     "@angular/cdk": "^18.2.13",
@@ -39,6 +40,7 @@
     "eslint": "^9.15.0",
     "eslint-config-prettier": "^9.1.0",
     "eslint-plugin-prettier": "^5.2.1",
+    "gh-pages": "^6.3.0",
     "jasmine-core": "~5.2.0",
     "karma": "~6.4.0",
     "karma-chrome-launcher": "~3.2.0",
