@@ -30,3 +30,14 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+
+## Changes
+Om lokaal te werken in angular.json:
+
+"baseHref": "https://cyclistenelewijt.be/",
+
+veranderen naar
+
+"baseHref": "/",
+
+en als je wil deployen terug zetten natuurlijk. Dit kan waarschijnlijk op een andere manier
