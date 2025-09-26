@@ -1,0 +1,33 @@
+.sponsors-card {
+  background-color: #fff !important;
+  color: #0a090a; /* donkere tekst */
+  border: 1px solid rgba(0,0,0,.08);
+  .card-body { background: transparent; }
+}
+
+
+/* Hover-pop voor sponsorafbeeldingen */
+.sponsors-container {
+  position: relative; /* voor z-index van hovered item */
+}
+
+.sponsors-container img {
+  display: inline-block;
+  transition: transform .15s ease, box-shadow .15s ease, filter .15s ease;
+  transform-origin: center;
+  will-change: transform;
+}
+
+.sponsors-container img:hover,
+.sponsors-container img:focus-visible {
+  transform: scale(1.07);                 /* iets groter */
+  box-shadow: 0 8px 24px rgba(0,0,0,.25); /* extra diepte */
+  z-index: 1;                              /* boven buren */
+}
+
+/* Respecteer systeeminstelling ‘reduced motion’ */
+@media (prefers-reduced-motion: reduce) {
+  .sponsors-container img {
+    transition: none;
+  }
+}
