@@ -1,7 +1,11 @@
-$white: #b8c392;
+$mustard:  #f8d086;
+$white: $mustard;
+$forest:   #41594b;
+$rust:     #dd4124;
+
 
 $theme-colors: (
-  "light":      #ff6352,
+  "light":      $forest,
   "dark":       #0a090a,
   "primary":    #053025,
   "secondary":  #285f88,
@@ -13,3 +17,95 @@ $theme-colors: (
 
 // Import Bootstrap SCSS file after defining custom variables
 @import 'bootstrap/scss/bootstrap';
+
+/* Afstanden: vertrek van je vorige $space (fallback 88px) */
+$space: 88px !default;
+
+/* Nieuwe spacing volgens jouw vraag */
+$space-x: calc(#{$space} * 2 / 3); /* 1/3 minder horizontaal  */
+$space-y: calc(#{$space} / 2);     /* 50% minder verticaal    */
+
+$forest: #41594b !default; // jouw achtergrondkleur
+$mint:   #c1d1c8 !default; // kleur van de X'jes
+
+.ce-pattern {
+  background-color: $forest;
+
+  /* 2 lagen voor de verspringende rijen */
+  background-image:
+    url("data:image/svg+xml;utf8,\
+<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 48'>\
+  <!-- \ met grotere gap rond (12,12) -->\
+  <path d='M10.0 10.0 L11.3 11.3 M12.7 12.7 L14.0 14.0' \
+        stroke='%23c1d1c8' stroke-width='0.5' stroke-opacity='0.30' \
+        stroke-linecap='round' fill='none'/>\
+  <!-- / met grotere gap -->\
+  <path d='M10.0 14.0 L11.3 12.7 M12.7 11.3 L14.0 10.0' \
+        stroke='%23c1d1c8' stroke-width='0.5' stroke-opacity='0.30' \
+        stroke-linecap='round' fill='none'/>\
+</svg>"),
+    url("data:image/svg+xml;utf8,\
+<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 48'>\
+  <path d='M10.0 10.0 L11.3 11.3 M12.7 12.7 L14.0 14.0' \
+        stroke='%23c1d1c8' stroke-width='0.5' stroke-opacity='0.30' \
+        stroke-linecap='round' fill='none'/>\
+  <path d='M10.0 14.0 L11.3 12.7 M12.7 11.3 L14.0 10.0' \
+        stroke='%23c1d1c8' stroke-width='0.5' stroke-opacity='0.30' \
+        stroke-linecap='round' fill='none'/>\
+</svg>");
+
+  /* Breedte = $space-x, hoogte = 2 * $space-y (om rijen te kunnen verschuiven) */
+  background-size: $space-x calc(#{$space-y} * 2), $space-x calc(#{$space-y} * 2);
+  background-repeat: repeat, repeat;
+
+  /* Laag 2: half vak naar rechts, één vak naar beneden (stagger) */
+  background-position: 0 0, calc(#{$space-x} / 2) $space-y;
+}
+
+
+
+
+
+/* subtiele mint-witte tekstkleur op de roestband */
+$mint-text: #e6eee9;
+
+/* Full-width roestkleurige hero met dubbele mosterdlijn (banner-stijl) */
+.ce-hero {
+  position: relative;
+  background-color: $rust;
+  color: #e6eee9;
+  padding-block: clamp(1.25rem, 3vw, 2.75rem);
+  margin-bottom: 22px; // ruimte maken voor de strepen eronder
+
+  .container { text-align: center; }
+
+  /* --- STREPEN OP DE ACHTERGROND, NIET IN HET ROOD --- */
+  &::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    height: 22px;
+    bottom: -22px;            // buiten de hero plaatsen
+    pointer-events: none;
+    /* 2 mosterdlijnen met transparant ertussen, over volle breedte */
+    background:
+      linear-gradient($mustard, $mustard) top/100% 8px no-repeat,
+      linear-gradient(transparent, transparent) center/100% 6px no-repeat,
+      linear-gradient($mustard, $mustard) bottom/100% 8px no-repeat;
+  }
+
+  .container {
+    text-align: center;
+  }
+
+  h1 {
+    letter-spacing: .5px;
+    text-shadow: 0 1px 0 rgba(0,0,0,.15);
+  }
+
+  .lead {
+    opacity: .95;
+    margin-top: .25rem;
+  }
+}
