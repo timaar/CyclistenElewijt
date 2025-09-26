@@ -1,8 +1,10 @@
+/* ===========================
+   Palette & Bootstrap overrides
+   =========================== */
 $mustard:  #f8d086;
-$white: $mustard;
+$white:    $mustard;
 $forest:   #41594b;
 $rust:     #dd4124;
-
 
 $theme-colors: (
   "light":      $forest,
@@ -15,13 +17,21 @@ $theme-colors: (
   "danger":     #f40840,
 );
 
-// Import Bootstrap SCSS file after defining custom variables
+/* (optioneel) basis bodykleur/tekst */
+$body-bg:    $mustard;
+$body-color: #0a090a;
+
+/* Import Bootstrap ná overrides */
 @import 'bootstrap/scss/bootstrap';
+
+/* ===========================
+   Achtergrond: X-patroon
+   =========================== */
 
 /* Afstanden: vertrek van je vorige $space (fallback 88px) */
 $space: 88px !default;
 
-/* Nieuwe spacing volgens jouw vraag */
+/* Nieuwe spacing volgens je vraag */
 $space-x: calc(#{$space} * 2 / 3); /* 1/3 minder horizontaal  */
 $space-y: calc(#{$space} / 2);     /* 50% minder verticaal    */
 
@@ -35,7 +45,7 @@ $mint:   #c1d1c8 !default; // kleur van de X'jes
   background-image:
     url("data:image/svg+xml;utf8,\
 <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 48'>\
-  <!-- \ met grotere gap rond (12,12) -->\
+  <!-- \\ met grotere gap rond (12,12) -->\
   <path d='M10.0 10.0 L11.3 11.3 M12.7 12.7 L14.0 14.0' \
         stroke='%23c1d1c8' stroke-width='0.5' stroke-opacity='0.30' \
         stroke-linecap='round' fill='none'/>\
@@ -60,52 +70,77 @@ $mint:   #c1d1c8 !default; // kleur van de X'jes
 
   /* Laag 2: half vak naar rechts, één vak naar beneden (stagger) */
   background-position: 0 0, calc(#{$space-x} / 2) $space-y;
+
+  color: $body-color;
 }
 
+/* ===========================
+   Hero (roest) + strepen op achtergrond
+   =========================== */
 
-
-
-
-/* subtiele mint-witte tekstkleur op de roestband */
+/* Tekstkleur op de roest-band */
 $mint-text: #e6eee9;
 
-/* Full-width roestkleurige hero met dubbele mosterdlijn (banner-stijl) */
+/* Gebruik CSS-variabelen voor live tweaking van de ruimte */
 .ce-hero {
   position: relative;
+  width: 100%;
   background-color: $rust;
-  color: #e6eee9;
+  color: $mint-text;
   padding-block: clamp(1.25rem, 3vw, 2.75rem);
-  margin-bottom: 22px; // ruimte maken voor de strepen eronder
+
+  /* >>> HIER pas je snel de ruimte aan <<< */
+  --ce-stripe-thick: 5px;        /* dikte per streep */
+  --ce-stripe-gap: 5px;          /* ruimte tussen de 2 strepen */
+  --ce-stripe-pad-top: 5px;     /* ruimte boven de strepen */
+  --ce-stripe-pad-bottom: 20px;  /* ruimte onder de strepen */
+  --ce-stripe-color: #e0be63;    /* donkerder mosterd (banner-achtig) */
+
+  /* marge onder de hero = totale hoogte van het stripe-blok (zonder top-padding) */
+  margin-bottom: calc(
+    var(--ce-stripe-pad-bottom) + var(--ce-stripe-gap) + var(--ce-stripe-thick) * 2
+  );
 
   .container { text-align: center; }
 
-  /* --- STREPEN OP DE ACHTERGROND, NIET IN HET ROOD --- */
+  h1 { letter-spacing: .5px; text-shadow: 0 1px 0 rgba(0,0,0,.15); margin: 0; }
+  .lead { opacity: .95; margin-top: .25rem; margin-bottom: 0; }
+
+  /* STREPEN OP DE ACHTERGROND, NIET IN HET ROOD */
   &::after {
     content: "";
     position: absolute;
     left: 0;
     right: 0;
-    height: 22px;
-    bottom: -22px;            // buiten de hero plaatsen
+
+    /* totale hoogte incl. top/bottom padding */
+    height: calc(
+      var(--ce-stripe-pad-top) + var(--ce-stripe-thick) +
+      var(--ce-stripe-gap) + var(--ce-stripe-thick) +
+      var(--ce-stripe-pad-bottom)
+    );
+
+    /* plaats het blok volledig onder de hero */
+    bottom: calc(-1 * (
+    var(--ce-stripe-pad-top) + var(--ce-stripe-thick) +
+    var(--ce-stripe-gap) + var(--ce-stripe-thick) +
+    var(--ce-stripe-pad-bottom)
+    ));
     pointer-events: none;
-    /* 2 mosterdlijnen met transparant ertussen, over volle breedte */
+
+    /* twee mosterd-gele strepen met transparante tussenruimte */
     background:
-      linear-gradient($mustard, $mustard) top/100% 8px no-repeat,
-      linear-gradient(transparent, transparent) center/100% 6px no-repeat,
-      linear-gradient($mustard, $mustard) bottom/100% 8px no-repeat;
-  }
+      linear-gradient(var(--ce-stripe-color), var(--ce-stripe-color))
+      0 var(--ce-stripe-pad-top) /
+        100% var(--ce-stripe-thick) no-repeat,
 
-  .container {
-    text-align: center;
-  }
+      linear-gradient(transparent, transparent)
+      0 calc(var(--ce-stripe-pad-top) + var(--ce-stripe-thick)) /
+        100% var(--ce-stripe-gap) no-repeat,
 
-  h1 {
-    letter-spacing: .5px;
-    text-shadow: 0 1px 0 rgba(0,0,0,.15);
-  }
-
-  .lead {
-    opacity: .95;
-    margin-top: .25rem;
+      linear-gradient(var(--ce-stripe-color), var(--ce-stripe-color))
+      0 calc(
+          var(--ce-stripe-pad-top) + var(--ce-stripe-thick) + var(--ce-stripe-gap)
+        ) / 100% var(--ce-stripe-thick) no-repeat;
   }
 }
