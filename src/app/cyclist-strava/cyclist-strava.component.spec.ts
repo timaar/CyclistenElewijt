@@ -1,6 +1,6 @@
-import {ComponentFixture, TestBed} from '@angular/core/testing';
+import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import {CyclistStravaComponent} from './cyclist-strava.component';
+import { CyclistStravaComponent } from './cyclist-strava.component';
 
 describe('CyclistStravaComponentComponent', () => {
   let component: CyclistStravaComponent;

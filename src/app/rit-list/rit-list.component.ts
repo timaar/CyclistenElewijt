@@ -1,8 +1,8 @@
-import {Component, OnInit, Input} from '@angular/core';
-import {RitModel} from '../models/rit.model';
-import {RitService} from '../services/RitService';
-import {NgbPagination} from '@ng-bootstrap/ng-bootstrap';
-import {CommonModule, DatePipe} from '@angular/common';
+import { Component, OnInit, Input } from '@angular/core';
+import { RitModel } from '../models/rit.model';
+import { RitService } from '../services/RitService';
+import { NgbPagination } from '@ng-bootstrap/ng-bootstrap';
+import { CommonModule, DatePipe } from '@angular/common';
 
 @Component({
     selector: 'app-rit-list-component',
