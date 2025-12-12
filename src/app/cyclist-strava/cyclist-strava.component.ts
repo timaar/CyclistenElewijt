@@ -7,7 +7,6 @@ import {CommonModule} from '@angular/common';
 
 @Component({
   selector: 'app-cyclist-strava-component',
-  standalone: true,
   imports: [
     SafeUrlPipe, NgbAccordionModule, CommonModule
   ],
