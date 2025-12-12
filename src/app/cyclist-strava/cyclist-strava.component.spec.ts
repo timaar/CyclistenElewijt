@@ -10,7 +10,7 @@ describe('CyclistStravaComponentComponent', () => {
     await TestBed.configureTestingModule({
       imports: [CyclistStravaComponent]
     })
-    .compileComponents();
+      .compileComponents();
 
     fixture = TestBed.createComponent(CyclistStravaComponent);
     component = fixture.componentInstance;

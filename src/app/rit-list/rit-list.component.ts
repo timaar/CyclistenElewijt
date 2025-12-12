@@ -5,15 +5,14 @@ import { NgbPagination } from '@ng-bootstrap/ng-bootstrap';
 import { CommonModule, DatePipe } from '@angular/common';
 
 @Component({
-  selector: 'app-rit-list-component',
-  standalone: true,
-  imports: [
-    NgbPagination,
-    DatePipe,
-    CommonModule
-  ],
-  templateUrl: './rit-list.component.html',
-  styleUrl: './rit-list.component.scss'
+    selector: 'app-rit-list-component',
+    imports: [
+        NgbPagination,
+        DatePipe,
+        CommonModule
+    ],
+    templateUrl: './rit-list.component.html',
+    styleUrl: './rit-list.component.scss'
 })
 export class RitListComponent implements OnInit {
   @Input() useMTB = false;  // Default to false (Koersfiets data)
@@ -23,7 +22,8 @@ export class RitListComponent implements OnInit {
   page = 1; // Current page
   pageSize = 4; // Items per page
 
-  constructor(private ritService: RitService) {}
+  constructor(private readonly ritService: RitService) {
+  }
 
   ngOnInit(): void {
     // Choose service method based on `useMTB` input

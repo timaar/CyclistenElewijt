@@ -7,7 +7,8 @@ import { RitModel } from '../models/rit.model';
   providedIn: 'root'
 })
 export class RitService {
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {
+  }
 
   getAllKoersfiets(): Observable<RitModel[]> {
     return this.http.get<RitModel[]>('assets/data/ritten-koersfiets-gpx.json');
@@ -17,3 +18,4 @@ export class RitService {
     return this.http.get<RitModel[]>('assets/data/ritten-mountainbike-gpx.json');
   }
 }
+
