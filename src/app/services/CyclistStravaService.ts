@@ -7,7 +7,7 @@ import { StravaCyclistModel } from '../models/StravaCyclist.model';
   providedIn: 'root'
 })
 export class CyclistStravaService {
-  constructor(private http: HttpClient) { }
+  constructor(private readonly http: HttpClient) { }
 
   getAllCyclisten(): Observable<StravaCyclistModel[]> {
     return this.http.get<StravaCyclistModel[]>('assets/data/strava-profielen.json');

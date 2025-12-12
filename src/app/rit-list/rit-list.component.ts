@@ -1,8 +1,8 @@
-import { Component, OnInit, Input } from '@angular/core';
-import { RitModel } from '../models/rit.model';
-import { RitService } from '../services/RitService';
-import { NgbPagination } from '@ng-bootstrap/ng-bootstrap';
-import { CommonModule, DatePipe } from '@angular/common';
+import {Component, OnInit, Input} from '@angular/core';
+import {RitModel} from '../models/rit.model';
+import {RitService} from '../services/RitService';
+import {NgbPagination} from '@ng-bootstrap/ng-bootstrap';
+import {CommonModule, DatePipe} from '@angular/common';
 
 @Component({
   selector: 'app-rit-list-component',
@@ -23,7 +23,8 @@ export class RitListComponent implements OnInit {
   page = 1; // Current page
   pageSize = 4; // Items per page
 
-  constructor(private ritService: RitService) {}
+  constructor(private readonly ritService: RitService) {
+  }
 
   ngOnInit(): void {
     // Choose service method based on `useMTB` input

@@ -8,7 +8,7 @@
 
 /* Hover-pop voor sponsorafbeeldingen */
 .sponsors-container {
-  position: relative; /* voor z-index van hovered item */
+  position: relative;
 }
 
 .sponsors-container img {
@@ -20,9 +20,9 @@
 
 .sponsors-container img:hover,
 .sponsors-container img:focus-visible {
-  transform: scale(1.07);                 /* iets groter */
-  box-shadow: 0 8px 24px rgba(0,0,0,.25); /* extra diepte */
-  z-index: 1;                              /* boven buren */
+  transform: scale(1.07);
+  box-shadow: 0 8px 24px rgba(0,0,0,.25);
+  z-index: 1;
 }
 
 /* Respecteer systeeminstelling ‘reduced motion’ */

@@ -1,9 +1,9 @@
-import { Component, OnInit } from '@angular/core';
-import { StravaCyclistModel } from '../models/StravaCyclist.model';
-import { CyclistStravaService } from '../services/CyclistStravaService';
-import { SafeUrlPipe } from '../pipes/safe-url.pipe';
-import { NgbAccordionModule } from '@ng-bootstrap/ng-bootstrap';
-import { CommonModule  } from '@angular/common';
+import {Component, OnInit} from '@angular/core';
+import {StravaCyclistModel} from '../models/StravaCyclist.model';
+import {CyclistStravaService} from '../services/CyclistStravaService';
+import {SafeUrlPipe} from '../pipes/safe-url.pipe';
+import {NgbAccordionModule} from '@ng-bootstrap/ng-bootstrap';
+import {CommonModule} from '@angular/common';
 
 @Component({
   selector: 'app-cyclist-strava-component',
@@ -17,7 +17,8 @@ import { CommonModule  } from '@angular/common';
 export class CyclistStravaComponent implements OnInit {
   cyclists: StravaCyclistModel[] = [];
 
-  constructor(private cyclistStravaService: CyclistStravaService) {}
+  constructor(private readonly cyclistStravaService: CyclistStravaService) {
+  }
 
   ngOnInit(): void {
     this.cyclistStravaService.getAllCyclisten().subscribe((data) => {
